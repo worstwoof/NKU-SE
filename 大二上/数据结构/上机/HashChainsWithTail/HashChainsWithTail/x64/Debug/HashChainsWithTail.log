@@ -1,0 +1,4 @@
+﻿  5-2.cpp
+C:\Users\Lenovo\Desktop\C++\HashChainsWithTail\HashChainsWithTail\5-2.cpp(150,14): warning C4101: “t2”: 未引用的局部变量
+C:\Users\Lenovo\Desktop\C++\HashChainsWithTail\HashChainsWithTail\5-2.cpp(150,10): warning C4101: “t1”: 未引用的局部变量
+  HashChainsWithTail.vcxproj -> C:\Users\Lenovo\Desktop\C++\HashChainsWithTail\x64\Debug\HashChainsWithTail.exe

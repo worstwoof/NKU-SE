@@ -1,0 +1,4 @@
+﻿  7_2.cpp
+C:\Users\Lenovo\Desktop\C++\huffman\huffman\7_2.cpp(77,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Lenovo\Desktop\C++\huffman\huffman\7_2.cpp(106,8): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  huffman.vcxproj -> C:\Users\Lenovo\Desktop\C++\huffman\x64\Debug\huffman.exe

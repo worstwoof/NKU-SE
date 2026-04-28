@@ -1,0 +1,6 @@
+﻿  6_3.cpp
+C:\Users\Lenovo\Desktop\C++\二叉树成员函数\二叉树成员函数\6_3.cpp(19,8): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Lenovo\Desktop\C++\二叉树成员函数\二叉树成员函数\6_3.cpp(79,9): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Lenovo\Desktop\C++\二叉树成员函数\二叉树成员函数\6_3.cpp(150,11): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+C:\Users\Lenovo\Desktop\C++\二叉树成员函数\二叉树成员函数\6_3.cpp(157,19): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+  二叉树成员函数.vcxproj -> C:\Users\Lenovo\Desktop\C++\二叉树成员函数\x64\Debug\二叉树成员函数.exe

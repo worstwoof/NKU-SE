@@ -1,0 +1,6 @@
+﻿  7_51.cpp
+C:\Users\Lenovo\Desktop\C++\新定义矩阵运算\新定义矩阵运算\7_51.cpp(342,34): warning C4566: 由通用字符名称“\uFF0C”表示的字符不能在当前代码页(1252)中表示出来
+C:\Users\Lenovo\Desktop\C++\新定义矩阵运算\新定义矩阵运算\7_51.cpp(342,34): warning C4566: 由通用字符名称“\uFF1A”表示的字符不能在当前代码页(1252)中表示出来
+C:\Users\Lenovo\Desktop\C++\新定义矩阵运算\新定义矩阵运算\7_51.cpp(693,10): warning C4566: 由通用字符名称“\uFF1A”表示的字符不能在当前代码页(1252)中表示出来
+C:\Users\Lenovo\Desktop\C++\新定义矩阵运算\新定义矩阵运算\7_51.cpp(695,10): warning C4566: 由通用字符名称“\uFF1A”表示的字符不能在当前代码页(1252)中表示出来
+  新定义矩阵运算.vcxproj -> C:\Users\Lenovo\Desktop\C++\新定义矩阵运算\x64\Debug\新定义矩阵运算.exe
