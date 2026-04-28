@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>背景样式练习</title>
+    <style>
+        body {
+       
+          background-image: url('images/check.png');
+          background-attachment: fixed;
+          background-repeat: repeat;
+          height: 1500px; /* 让页面出现滚动条 */
+        }
+    
+        .box {
+          width: 80%;
+          height: 300px;
+          margin: 50px auto;
+          border: 2px solid black;
+          
+          /* --- 使用复合属性 --- */
+          /* 颜色: 浅灰色
+            图片: 'logo.png' (假设有一张 50x50 的图片)
+            平铺: 不平铺
+            附着: 随元素滚动 (scroll 是默认值)
+            位置: 水平居中 (center) 垂直顶部 (top)
+          */
+          background: #f0f0f0 url('images/logo.png') no-repeat center top;
+          
+          /* (可选) 使用 background-size 来控制图片大小 */
+          background-size: 50px 50px;
+        }
+        
+        .transparent-box {
+          width: 80%;
+          height: 150px;
+          margin: 50px auto;
+          border: 1px solid red;
+          
+          /* 设置一个半透明的红色背景 */
+          background-color: rgba(255, 0, 0, 0.2); /* 20% 透明度的红色 */
+          color: #000;
+          font-weight: bold;
+          text-align: center;
+          line-height: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+      </div>
+    
+    <div class="transparent-box">
+      这是一个半透明背景的盒子
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header, section, aside, nav, footer {
+  padding: 20px;
+}
+
+header, footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Roboto+Slab:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #a66;
+  --background-color: #fdf8f5;
+  --text-color: #333;
+  --font-heading: 'Roboto Slab', serif;
+  --font-body: 'Lora', serif;
+  --container-width: 1400px;
+  --border-style: 5px solid var(--primary-color);
+}
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  line-height: 1.6; 
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.main-content {
+  display: flex;
+  gap: 20px; 
+  padding: 20px 0;
+}
+h1, h2 {
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 4rem; 
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 3rem; 
+}
+
+section h2 + p {
+  text-indent: 20px;
+}
+
+a {
+  color: #a66;
+  outline: none;
+}
+
+a:link, a:visited {
+  text-decoration: underline;
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+a[href*="wikipedia.org"] {
+  padding-right: 18px;
+  background: url(link.png) no-repeat right center;
+  background-size: 14px 14px;
+}
+
+ul, ol {
+  line-height: 1.5;
+  margin: 1.6rem 0;
+}
+
+section ul {
+  list-style-type: square;
+}
+
+aside ul {
+  list-style-type: none; 
+  padding-left: 0;
+}
+
+aside ul li {
+  padding-left: 22px; 
+  background: url(star.png) no-repeat left center; 
+  background-size: 16px 16px; 
+}
+
+nav ul {
+  list-style-type: none; 
+  padding-left: 0;
+  margin: 0;
+}
+
+nav li {
+  margin-bottom: 15px; 
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px; /* 添加圆角更柔和 */
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 添加细微阴影 */
+  transition: all 0.2s ease-in-out; /* 添加平滑过渡效果 */
+}
+
+nav a:hover, nav a:focus-visible {
+  background-color: var(--primary-color);
+  color: white;
+  transform: translateY(-2px); /* 悬停时轻微上移 */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

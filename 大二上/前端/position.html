@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS 定位与浮动演示</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font: 14px/1.6 Arial, Helvetica, sans-serif;
+        background: #f7f7f7;
+      }
+      .wrap {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 12px;
+      }
+      header.site {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+      }
+      h1 {
+        margin: 8px 0;
+        font-size: 20px;
+      }
+      h2 {
+        margin: 20px 0 10px;
+        font-size: 18px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 12px;
+        margin: 12px 0;
+      }
+      .box {
+        background: #e8f4ff;
+        border: 1px dashed #4aa3ff;
+        min-height: 48px;
+        text-align: center;
+        line-height: 48px;
+        color: #036;
+        margin: 6px 0;
+      }
+      .note {
+        color: #666;
+        font-size: 13px;
+      }
+      code {
+        background: #222;
+        color: #eee;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      pre {
+        background: #222;
+        color: #eee;
+        padding: 10px;
+        overflow: auto;
+        border-radius: 4px;
+      }
+
+      /* 1) 文档流：block / inline / inline-block */
+      .inline-demo span {
+        background: #eef5ff;
+        border: 1px solid #bcd7ff;
+        padding: 2px 4px;
+        margin-right: 4px;
+      }
+      .ib {
+        display: inline-block;
+        width: 100px;
+        height: 48px;
+        margin: 4px;
+      }
+
+      /* 2) 浮动与清除（用 overflow 清除，更直观） */
+      .float-wrap {
+        border: 1px solid #ddd;
+        padding: 8px;
+        overflow: auto;
+      }
+      .f {
+        float: left;
+        width: 120px;
+        height: 48px;
+        margin: 6px;
+      }
+
+      /* 3) 层定位示例 */
+      .stage {
+        position: relative;
+        height: 160px;
+        border: 1px solid #ddd;
+        background: #fafafa;
+      }
+      .rel {
+        position: relative;
+        top: 8px;
+        left: 8px;
+      }
+      .abs-parent {
+        position: relative;
+        height: 160px;
+        border: 1px solid #ddd;
+        background: #fafafa;
+      }
+      .abs {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        background: #ffecec;
+        border-color: #f99;
+        color: #922;
+      }
+
+      /* 4) z-index */
+      .z-stage {
+        position: relative;
+        height: 160px;
+        border: 1px solid #ddd;
+        background: #fafafa;
+      }
+      .z1,
+      .z2,
+      .z3 {
+        position: absolute;
+        width: 120px;
+        height: 60px;
+        line-height: 60px;
+      }
+      .z1 {
+        left: 20px;
+        top: 30px;
+        background: #fde68a;
+        z-index: 0;
+      }
+      .z2 {
+        left: 60px;
+        top: 60px;
+        background: #bfdbfe;
+        z-index: 3;
+      }
+      .z3 {
+        left: 100px;
+        top: 90px;
+        background: #fecaca;
+        z-index: 2;
+      }
+
+      /* 5) 绝对定位的中心居中 */
+      .center-stage {
+        position: relative;
+        height: 160px;
+        border: 1px solid #ddd;
+        background: #fafafa;
+      }
+      .center-box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 200px;
+        height: 80px;
+        margin-left: -100px;
+        margin-top: -40px;
+      }
+
+      /* 固定定位按钮 */
+      .back {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        background: #e6ffe6;
+        border: 1px solid #9ae69a;
+        padding: 10px 12px;
+        text-decoration: none;
+        color: #060;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <h1>CSS 定位与浮动演示</h1>
+        <div class="note">
+          顶部使用 <code>position: sticky</code>；右下角绿色按钮使用 <code>position: fixed</code>。
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- 1. 文档流 -->
+      <section class="card" id="flow">
+        <h2>1) 文档流：block / inline / inline-block</h2>
+        <div class="note">
+          块级元素独占一行；行内元素同行显示；inline-block 既可同行，又可设置宽高。
+        </div>
+        <div class="box">div（block）</div>
+        <p class="inline-demo">
+          <span>span（inline）</span>
+          <span>span（inline）</span>
+          <span>span（inline）</span>
+        </p>
+        <div>
+          <div class="box ib">inline-block</div>
+          <div class="box ib">inline-block</div>
+          <div class="box ib">inline-block</div>
+        </div>
+      </section>
+
+      <!-- 2. 浮动与清除 -->
+      <section class="card" id="float">
+        <h2>2) 浮动 float 与清除</h2>
+        <div class="note">父容器使用 <code>overflow:auto</code> 清除浮动（最直观）。</div>
+        <div class="float-wrap">
+          <div class="box f">float</div>
+          <div class="box f">float</div>
+          <div class="box f">float</div>
+        </div>
+      </section>
+
+      <!-- 3. 层定位：static / relative / absolute -->
+      <section class="card" id="position">
+        <h2>3) 层定位：static / relative / absolute / fixed / sticky</h2>
+        <div class="note">relative 相对自身原位偏移；absolute 脱离文档流并相对最近的定位父级。</div>
+        <div class="stage">
+          <div class="box">static（默认）</div>
+          <div class="box rel">relative（向右下偏移）</div>
+        </div>
+        <div class="abs-parent" style="margin-top: 8px">
+          <div class="box" style="width: 180px">父元素（relative）</div>
+          <div class="box abs" style="width: 140px; height: 60px; line-height: 60px">
+            子元素 absolute
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. z-index 叠放顺序 -->
+      <section class="card" id="zindex">
+        <h2>4) z-index 叠放顺序</h2>
+        <div class="z-stage">
+          <div class="box z1">z=1</div>
+          <div class="box z2">z=3（最上）</div>
+          <div class="box z3">z=2</div>
+        </div>
+        <div class="note">
+          注意：z-index 仅对设置了定位（relative/absolute/fixed/sticky）的元素生效。
+        </div>
+      </section>
+
+      <!-- 5. 绝对定位的水平/垂直居中 -->
+      <section class="card" id="center">
+        <h2>5) 绝对定位实现水平 + 垂直居中</h2>
+        <div class="center-stage">
+          <div class="box center-box">left:50% + 负 margin（宽/高一半）</div>
+        </div>
+        <pre><code>.center-box {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 200px; height: 80px;
+  margin-left: -100px; /* 宽度一半 */
+  margin-top:  -40px; /* 高度一半 */
+}</code></pre>
+      </section>
+
+      <section style="height: 40vh"></section>
+    </main>
+
+    <a class="back" href="#flow">回到顶部 ↑</a>
+  </body>
+</html>
