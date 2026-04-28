@@ -1,0 +1,45 @@
+\contentsline {section}{\numberline {一}引言}{3}{section.1}%
+\contentsline {subsection}{\numberline {一.1}研究背景}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {一.2}问题重述}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {一.3}本文工作}{4}{subsection.1.3}%
+\contentsline {section}{\numberline {二}模型假设}{5}{section.2}%
+\contentsline {section}{\numberline {三}符号说明}{6}{section.3}%
+\contentsline {section}{\numberline {四}模型建立与求解}{7}{section.4}%
+\contentsline {subsection}{\numberline {四.1}模型一：太空电梯运力与时间线分析}{7}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {四.1.1}问题构建与建模思路}{7}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {四.1.2}系统架构与运力模型}{7}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {四.1.3}运营约束与有效运力}{7}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {四.1.4}时间线与成本预测}{7}{subsubsection.4.1.4}%
+\contentsline {subsubsection}{\numberline {四.1.5}模型一结果小结}{9}{subsubsection.4.1.5}%
+\contentsline {subsection}{\numberline {四.2}模型二：传统火箭发射网络分析}{9}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {四.2.1}问题构建与网络结构}{9}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {四.2.2}发射站点运力模型}{9}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {四.2.3}失败率与有效运力}{9}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {四.2.4}时间线、成本与环境预测}{9}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {四.2.5}模型二结果小结}{10}{subsubsection.4.2.5}%
+\contentsline {subsection}{\numberline {四.3}模型三：混合运输优化}{10}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {四.3.1}问题构建与优化目标}{10}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {四.3.2}运力比例分配策略}{10}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {四.3.3}优化时间线与资源配置}{11}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {四.3.4}成本与环境分析}{11}{subsubsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {四.3.5}模型三结果小结}{12}{subsubsection.4.3.5}%
+\contentsline {subsection}{\numberline {四.4}模型四：系统可靠性与环境可持续性}{12}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {四.4.1}非完美条件下的可靠性分析}{12}{subsubsection.4.4.1}%
+\contentsline {paragraph}{故障情景分析}{12}{section*.1}%
+\contentsline {subsubsection}{\numberline {四.4.2}运营殖民地的水可持续性}{14}{subsubsection.4.4.2}%
+\contentsline {paragraph}{用水需求模型}{14}{section*.2}%
+\contentsline {paragraph}{供水运输成本比较}{14}{figure.7}%
+\contentsline {subsubsection}{\numberline {四.4.3}环境影响评估}{14}{subsubsection.4.4.3}%
+\contentsline {paragraph}{环境优化建议}{15}{section*.4}%
+\contentsline {section}{\numberline {五}敏感性分析}{15}{section.5}%
+\contentsline {subsection}{\numberline {五.1}故障率敏感性分析}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {五.2}成本参数敏感性分析}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {五.3}综合鲁棒性评估}{16}{subsection.5.3}%
+\contentsline {section}{\numberline {六}模型评价}{16}{section.6}%
+\contentsline {subsection}{\numberline {六.1}模型优点}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {六.2}模型局限}{17}{subsection.6.2}%
+\contentsline {subsection}{\numberline {六.3}模型改进方向}{17}{subsection.6.3}%
+\contentsline {section}{\numberline {七}结论}{18}{section.7}%
+\contentsline {section}{致MCM机构的建议信}{19}{section*.5}%
+\contentsline {section}{AI使用报告}{22}{section*.7}%
+\contentsfinish 

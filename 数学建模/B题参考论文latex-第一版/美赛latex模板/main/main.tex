@@ -1,0 +1,161 @@
+%%
+%% This is file `mcmthesis-demo.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% mcmthesis.dtx  (with options: `demo')
+%% 
+%% -----------------------------------
+%% This is a generated file.
+%% 
+%% Copyright (C) 2010 -- 2015 by latexstudio
+%%       2014 -- 2019 by Liam Huang
+%%       2019 -- present by latexstudio.net
+%% 
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%% 
+%% The Current Maintainer of this work is latexstudio.net.
+%% 
+%% !Mode:: "TeX:UTF-8"
+%\documentclass{mcmthesis}
+\documentclass[CTeX=true]{mcmthesis}  % 当使用 CTeX 套装时请注释上一行使用该行的设置
+\mcmsetup{tstyle=\color{black}\bfseries,%修改题号，队号的颜色和加粗显示，黑色可以修改为 black
+        tcn = MI2601448, problem = B, %修改队号，参赛题号
+        sheet = true, titleinsheet = true, keywordsinsheet = true,
+        titlepage = false, abstract = true}
+
+% 添加中文支持 - 必须在文档类加载后立即加载
+% 注意：使用此配置时，请使用 XeLaTeX 或 LuaLaTeX 编译，而不是 pdfLaTeX
+\usepackage{ctex}
+% 设置ctex包的选项，使用中文名称
+\ctexset{contentsname=目录}
+% 将图表名称设置为中文
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+% 将目录和参考文献名称设置为中文
+\renewcommand{\contentsname}{目录}
+\renewcommand{\refname}{参考文献}
+% 修改Summary Sheet头部
+\renewcommand{\headset}{{\Large 2026}\\MCM/ICM\\Summary Sheet}
+
+  %四款字体可以选择
+  %\usepackage{times}
+  %\usepackage{newtxtext}
+  %\usepackage{palatino}
+ \usepackage{txfonts}
+
+% 添加titletoc包控制目录格式
+\usepackage{titletoc}
+
+% 设置目录中section的格式（编号和页码使用Times字体）
+\titlecontents{section}[0pt]
+  {\addvspace{6pt}\rmfamily\bfseries}
+  {\thecontentslabel\quad}
+  {}
+  {\titlerule*[0.5pc]{.}\rmfamily\contentspage}
+
+% 设置目录中subsection的格式
+\titlecontents{subsection}[1.5em]
+  {\addvspace{2pt}\rmfamily}
+  {\thecontentslabel\quad}
+  {}
+  {\titlerule*[0.5pc]{.}\rmfamily\contentspage}
+
+% 设置目录中subsubsection的格式
+\titlecontents{subsubsection}[3em]
+  {\addvspace{1pt}\rmfamily\small}
+  {\thecontentslabel\quad}
+  {}
+  {\titlerule*[0.5pc]{.}\rmfamily\contentspage}
+% 注意：使用 ctex 时不需要 inputenc，且应使用 XeLaTeX/LuaLaTeX 编译
+\usepackage{indentfirst}  %首行缩进，注释掉，首行就不再缩进。
+\usepackage{lipsum}
+\usepackage{float}  %精确控制图表位置
+
+% 添加算法相关宏包
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% 设置引用为蓝色上标
+\usepackage{xcolor}
+% 配置hyperref的引用颜色（需要在hyperref加载后）
+% 启用彩色链接，让图表引用显示为蓝色（覆盖模板类文件中的hidelinks设置）
+\AtBeginDocument{
+    \hypersetup{
+        colorlinks=true,      % 启用彩色链接（覆盖hidelinks）
+        hidelinks=false,      % 禁用隐藏链接
+        linkcolor=blue,       % 内部链接（包括图表引用）为蓝色
+        citecolor=blue,       % 引用为蓝色
+        urlcolor=blue,        % URL为蓝色
+        filecolor=blue        % 文件链接为蓝色
+    }
+}
+% 自定义蓝色上标引用命令（确保引用显示为蓝色上标）
+% 保存原始的cite命令
+\let\oldcite\cite
+% 重新定义cite命令为蓝色
+\renewcommand{\cite}[1]{\textcolor{blue}{\oldcite{#1}}}
+% bluecite命令作为别名（保持兼容性）
+\let\bluecite\cite
+
+% 间距调整
+\setlength\parskip{0.2\baselineskip}  % 减小段落间距
+\linespread{1.0}  % 行距
+
+% 修复页眉高度
+\setlength{\headheight}{15pt}
+\addtolength{\topmargin}{-3pt}
+
+% 自定义页眉
+\fancyhead[C]{美赛相关资料，请关注【公众号：云顶数模】、进QQ群：945909139，添加助理免费领取}
+\fancyhead[L]{}
+\fancyhead[R]{}
+
+% 使用中文数字编号（一、二、三）
+\setcounter{secnumdepth}{3}
+\renewcommand{\thesection}{\chinese{section}}
+\renewcommand{\thesubsection}{\chinese{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\chinese{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\title{月球物流：建设10万人月球殖民地的多模态运输优化}
+
+
+\author{\small \href{https://www.latexstudio.net/}
+  {\includegraphics[width=7cm]{mcmthesis-logo}}}
+\date{\today}
+
+
+
+
+\begin{document}
+
+
+\input{../sections/0.abstract}
+
+\maketitle
+\tableofcontents
+\newpage
+\input{../sections/1.Introduction}
+\newpage
+\input{../sections/2.Assumptions}
+\input{../sections/3.Notations}
+\input{../sections/4.Models}
+\input{../sections/5.Sensitivity Analysis}
+\input{../sections/6.Model Evaluation and Promotion}
+\input{../sections/7.Conclusions}
+\input{../sections/9.Letter}
+\input{../sections/8.References}
+\input{../sections/10.AI}
+
+% 在文档末尾定义LastPage标签以正确显示总页数
+\label{LastPage}
+
+\end{document}
+

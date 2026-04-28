@@ -1,0 +1,64 @@
+\section{敏感性分析}
+
+优化模型的实用价值取决于其结论在参数扰动下的稳定性。本节系统检验模型对关键运营参数——系统故障率和单位运输成本——的敏感程度，为决策者提供风险评估依据。
+
+\subsection{故障率敏感性分析}
+
+混合运输方案的建设周期$T_{\text{hybrid}}$对两系统故障率的敏感性具有显著差异。通过对优化模型的偏导数分析，可定量刻画这一差异：
+
+\textbf{电梯故障率敏感性}：建设周期对电梯故障率的偏导数为：
+\begin{equation}
+    \frac{\partial T_{\text{hybrid}}}{\partial \epsilon_e} = \frac{M \cdot n \cdot C_e \cdot (1-\delta)}{(C_{e,\text{eff}} + C_{r,\text{eff}})^2}
+\end{equation}
+
+代入基准参数值，得$\partial T / \partial \epsilon_e \approx 142$年/单位故障率。这意味着电梯故障率每增加\textbf{10个百分点}，建设周期延长约\textbf{14.2年}。数值模拟显示：
+\begin{enumerate}
+    \item $\epsilon_e$从2\%升至7\%时，$T$从111.9年增至118.6年（+6.0\%）
+    \item $\epsilon_e$从2\%升至12\%时，$T$从111.9年增至125.7年（+12.3\%）
+    \item $\epsilon_e$从2\%升至20\%时，$T$从111.9年增至137.4年（+22.8\%）
+\end{enumerate}
+
+\textbf{火箭失败率敏感性}：建设周期对火箭失败率的偏导数为：
+\begin{equation}
+    \frac{\partial T_{\text{hybrid}}}{\partial \epsilon_r} = \frac{M \cdot \sum_{i=1}^{m}\lambda_i \cdot C_r}{(C_{e,\text{eff}} + C_{r,\text{eff}})^2}
+\end{equation}
+
+计算得$\partial T / \partial \epsilon_r \approx 47$年/单位失败率，约为电梯敏感性的\textbf{1/3}。火箭失败率每增加10个百分点，工期仅延长约\textbf{4.7年}。数值模拟显示：
+\begin{enumerate}
+    \item $\epsilon_r$从3\%升至8\%时，$T$从111.9年增至114.1年（+2.0\%）
+    \item $\epsilon_r$从3\%升至13\%时，$T$从111.9年增至116.6年（+4.2\%）
+    \item $\epsilon_r$从3\%升至20\%时，$T$从111.9年增至119.9年（+7.1\%）
+\end{enumerate}
+
+\textbf{敏感性差异解释}：电梯敏感性高于火箭的原因在于其在最优配置中占据更大的运力份额（55.9\% vs 44.1\%）。电梯运力下降会更显著地拉长材料交付周期。这一发现对运营策略具有重要启示：\textit{混合方案的成功关键在于确保太空电梯系统的高可用性}。建议MCM机构将电梯维护和快速修复能力作为优先投资方向。
+
+\subsection{成本参数敏感性分析}
+
+总任务成本对单位运输成本假设呈线性响应，但两系统的贡献权重不同：
+
+\textbf{电梯成本敏感性}：
+\begin{equation}
+    \frac{\partial \text{Cost}_{\text{hybrid}}}{\partial c_e} = M_{\text{elevator}} \times 1000 = 55.92 \times 10^9 \text{ 美元/（美元/公斤）}
+\end{equation}
+
+电梯成本每增加\textbf{1美元/公斤}，总成本增加约\textbf{559亿美元}。若$c_e$从100上升至150美元/公斤（+50\%），总成本增加\textbf{2.8万亿美元}（从71.7增至74.5万亿）。
+
+\textbf{火箭成本敏感性}：
+\begin{equation}
+    \frac{\partial \text{Cost}_{\text{hybrid}}}{\partial c_r} = M_{\text{rocket}} \times 1000 = 44.08 \times 10^9 \text{ 美元/（美元/公斤）}
+\end{equation}
+
+火箭成本每增加\textbf{1美元/公斤}，总成本增加约\textbf{441亿美元}。若$c_r$从1500上升至2250美元/公斤（+50\%），总成本增加\textbf{33.1万亿美元}（从71.7增至104.8万亿）。
+
+\textbf{成本敏感性结论}：尽管电梯在材料分配中占比更高，但由于其单位成本远低于火箭（100 vs 1500美元/公斤），总成本对火箭成本的敏感性实际上更高（以绝对值计）。这强调了两点：(1) 在成本优化层面应优先关注火箭成本控制；(2) 尽可能提高电梯运输比例是降低总成本的有效策略。
+
+\subsection{综合鲁棒性评估}
+
+综合以上分析，本文模型在以下条件范围内保持结论稳健：
+\begin{enumerate}
+    \item 电梯故障率$\epsilon_e \leq 15\%$时，混合方案工期仍优于纯电梯方案
+    \item 火箭失败率$\epsilon_r \leq 20\%$时，混合方案工期优势保持在40\%以上
+    \item 成本参数波动$\pm 50\%$范围内，混合方案总成本仍显著低于纯火箭方案
+\end{enumerate}
+
+即使在最悲观情景（$\epsilon_e=15\%$、$\epsilon_r=15\%$、成本各上浮50\%）下，混合方案仍是三种策略中的帕累托最优解，验证了本文结论的稳健性。

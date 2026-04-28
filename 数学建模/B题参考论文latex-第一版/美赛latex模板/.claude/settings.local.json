@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\wjx\\\\Desktop\\\\HSB1\")",
+      "Bash(findstr:*)",
+      "Bash(dir:*)",
+      "Bash(xelatex:*)",
+      "Bash(python ball_trajectory_analysis.py:*)"
+    ]
+  }
+}
