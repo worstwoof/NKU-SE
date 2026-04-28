@@ -1,0 +1,316 @@
+/* :root 存放所有颜色变量 (暗色模式) */
+:root {
+    --bg-body: #e8e8e8;
+    --bg-calculator: #3a3a3a;
+    --bg-display: #3a3a3a;
+    --bg-history: #4a4a4a;
+    --bg-history-item: #5a5a5a;
+    --bg-history-clear: #7c4dff; 
+    --bg-history-item-hover: #6a6a6a;
+
+    --text-display-main: #ffffff;
+    --text-display-sub: #b0b0b0;
+    --text-history-title: #ffffff;
+    --text-history-item: #f0f0f0;
+    --text-history-result: #ffffff;
+    --text-btn-operator: #ffffff;
+    --text-btn-special: #f5a623; 
+    --text-btn-number: #ffffff;
+    --text-btn-sci: #a6e22e; /* 科学按钮亮色 */
+
+    --btn-bg-number: #4a4a4a;
+    --btn-bg-operator: #f5a623;
+    --btn-bg-special: #646464;
+    --btn-bg-equals: #007bff;
+    --btn-bg-sci: #646464;
+    
+    --shadow-main: 0 10px 40px rgba(0, 0, 0, 0.2);
+    --shadow-history: 0 5px 20px rgba(0, 0, 0, 0.1);
+    --border-color: #555;
+}
+
+/* 浅色模式会覆盖 :root 中的变量 */
+body.light-mode {
+    --bg-body: #f0f2f5;
+    --bg-calculator: #ffffff;
+    --bg-display: #ffffff;
+    --bg-history: #ffffff;
+    --bg-history-item: #f9f9f9;
+    --bg-history-clear: #f44336; 
+    --bg-history-item-hover: #f0f0f0;
+
+    --text-display-main: #333333;
+    --text-display-sub: #777777;
+    --text-history-title: #333333;
+    --text-history-item: #555;
+    --text-history-result: #333;
+    --text-btn-operator: #ffffff;
+    --text-btn-special: #f5a623;
+    --text-btn-number: #333333;
+    --text-btn-sci: #6a8021; 
+
+    --btn-bg-number: #f0f0f0;
+    --btn-bg-operator: #f5a623;
+    --btn-bg-special: #e0e0e0;
+    --btn-bg-equals: #007bff;
+    --btn-bg-sci: #e0e0e0;
+    
+    --shadow-main: 0 10px 40px rgba(0, 0, 0, 0.1);
+    --shadow-history: 0 5px 20px rgba(0, 0, 0, 0.08);
+    --border-color: #eee;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+/* flex 布局，让计算器和历史记录并排 */
+.app-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.calculator {
+    width: 340px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-main);
+    background-color: var(--bg-calculator);
+    transition: background-color 0.3s ease, max-height 0.3s ease;
+}
+
+.display-container {
+    background-color: var(--bg-display);
+    padding: 25px 20px;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    word-break: break-all;
+    transition: background-color 0.3s ease;
+}
+
+.sub-display {
+    font-size: 1.2rem;
+    color: var(--text-display-sub);
+    text-align: right;
+    height: 25px;
+}
+
+.main-display {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--text-display-main);
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background-color: var(--bg-calculator);
+    padding: 2px;
+}
+
+/* 科学计算按钮默认不显示 */
+.scientific-buttons {
+    display: none; 
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    grid-column: span 4;
+}
+
+/* 当 .calculator 有 .scientific 类时，才显示 */
+.calculator.scientific .scientific-buttons {
+    display: grid;
+}
+
+.btn {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 20px 0;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s ease, background-color 0.3s, transform 0.1s ease;
+    border-radius: 12px;
+}
+.btn:hover { opacity: 0.85; }
+/* 简单的点击缩小动画 */
+.btn:active { 
+    opacity: 0.7;
+    transform: scale(0.95);
+}
+
+.number, .decimal {
+    background-color: var(--btn-bg-number);
+    color: var(--text-btn-number);
+}
+.operator {
+    background-color: var(--btn-bg-operator);
+    color: var(--text-btn-operator);
+}
+.special {
+    background-color: var(--btn-bg-special);
+    color: var(--text-btn-special);
+    font-weight: bold;
+}
+.sci {
+    background-color: var(--btn-bg-sci);
+    color: var(--text-btn-sci);
+    font-weight: bold;
+}
+.equals {
+    background-color: var(--btn-bg-equals);
+    color: #ffffff;
+    grid-column: span 4;
+}
+
+.history-container {
+    width: 280px;
+    max-height: 595px; 
+    background-color: var(--bg-history);
+    border-radius: 12px;
+    box-shadow: var(--shadow-history);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.history-header h3 {
+    margin: 0;
+    color: var(--text-history-title);
+}
+
+.toggles-container {
+    display: flex;
+    gap: 10px;
+}
+
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* 鼠标指针，提示用户可以点击重用 */
+#history-list li {
+    padding: 12px 10px;
+    border-radius: 8px;
+    background-color: var(--bg-history-item);
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+#history-list li:hover {
+    background-color: var(--bg-history-item-hover);
+}
+
+/* 禁用子元素的鼠标事件，确保点击事件注册在 li 上 */
+#history-list .history-expr {
+    font-size: 0.9rem;
+    color: var(--text-history-item);
+    pointer-events: none; 
+}
+
+#history-list .history-result {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-history-result);
+    pointer-events: none;
+}
+
+#clear-history {
+    background-color: var(--bg-history-clear);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+#clear-history:hover { opacity: 0.8; }
+
+/* 纯 CSS 切换开关的样式 */
+.toggle-label {
+    width: 45px;
+    height: 24px;
+    background-color: #777;
+    border-radius: 12px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s;
+}
+/* 这是那个滑块圆点 */
+.toggle-label::after {
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: transform 0.3s;
+}
+.theme-label::after {
+    content: '🌙';
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+}
+.mode-label::after {
+    content: 'Σ'; 
+    font-size: 12px;
+    text-align: center;
+    line-height: 18px;
+}
+#theme-toggle, #mode-toggle {
+    display: none; /* 隐藏原始的 checkbox */
+}
+/* 利用 :checked 伪类和相邻兄弟选择器 (+) 来移动滑块 */
+#theme-toggle:checked + .toggle-label {
+    background-color: #007bff;
+}
+#theme-toggle:checked + .toggle-label::after {
+    transform: translateX(20px);
+    content: '☀️';
+}
+#mode-toggle:checked + .toggle-label {
+    background-color: #a6e22e; 
+}
+#mode-toggle:checked + .toggle-label::after {
+    transform: translateX(20px);
+    content: 'Std';
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+}

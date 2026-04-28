@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>咖啡小屋 - 高级版</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" href="images/Latte.jpg" type="image/jpeg">
+</head>
+<body>
+    
+    <div class="page-wrapper">
+        <header class="header-container">
+            <img src="images/banner.jpg" alt="咖啡横幅" class="header-banner-img">
+            <div class="header-icons">
+                <img src="images/1.bmp" alt="icon 1">
+                <img src="images/2.bmp" alt="icon 2">
+                <img src="images/3.bmp" alt="icon 3">
+                <img src="images/4.bmp" alt="icon 4">
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#">MENU</a></li>
+                <li><a href="#">COOK</a></li>
+                <li><a href="#">STORY</a></li>
+                <li><a href="#">NEWS</a></li>
+                <li><a href="#">PARTY</a></li>
+            </ul>
+        </nav>
+
+        <div class="content-area">
+            <aside>
+                <h3>咖啡MENU</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>拿铁</th>
+                            <th>卡布奇诺</th>
+                            <th>摩卡</th>
+                            <th>浓缩</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>大杯</td>
+                            <td>30</td>
+                            <td>30</td>
+                            <td>32</td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td>中杯</td>
+                            <td>25</td>
+                            <td>25</td>
+                            <td>28</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>小杯</td>
+                            <td>20</td>
+                            <td>20</td>
+                            <td>25</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="preview-images">
+                    <a href="#article-latte" class="preview-link">
+                        <img src="images/Latte.jpg" alt="拿铁预览" class="preview-thumb">
+                    </a>
+                    <a href="#article-cappuccino" class="preview-link">
+                        <img src="images/Cappuccino.jpg" alt="卡布奇诺预览" class="preview-thumb">
+                    </a>
+                    <a href="#article-mocha" class="preview-link">
+                        <img src="images/Mocha.jpg" alt="摩卡预览" class="preview-thumb">
+                    </a>
+                    <a href="#article-espresso" class="preview-link">
+                        <img src="images/Espresso.jpg" alt="浓缩咖啡预览" class="preview-thumb">
+                    </a>
+                </div>
+            </aside>
+            
+            <main>
+                <article id="article-latte">
+                    <img src="images/Latte.jpg" alt="拿铁咖啡">
+                    <div class="text-content">
+                        <h4>拿铁Caffè Latte</h4>
+                        <p>拿铁咖啡是意式浓缩咖啡与牛奶的经典混合。 “Latte”在意大利语中是“牛奶”的意思。它由三分之一的浓缩咖啡和三分之二的蒸汽牛奶制成，顶部覆盖着一层薄薄的奶泡。</p>
+                        <p>在品尝拿铁时，你可以感受到牛奶的温和与咖啡的香醇完美融合，口感丝滑，是许多咖啡初学者的最爱。</p>
+                    </div>
+                </article>
+                <article id="article-cappuccino">
+                    <img src="images/Cappuccino.jpg" alt="卡布奇诺咖啡">
+                    <div class="text-content">
+                        <h4>卡布奇诺Cappuccino</h4>
+                        <p>卡布奇诺以其丰富的奶泡而闻名，是意式咖啡的经典之作。它由等量的浓缩咖啡、蒸汽牛奶和奶泡（1:1:1）构成。奶泡的轻盈与咖啡的浓郁形成了鲜明对比。</p>
+                    </div>
+                </article>
+                <article id="article-mocha">
+                    <img src="images/Mocha.jpg" alt="摩卡咖啡">
+                    <div class="text-content">
+                        <h4>摩卡Caffè Mocha</h4>
+                        <p>摩卡咖啡在浓缩咖啡和热牛奶的基础上，加入了巧克力酱，顶部通常还会挤上鲜奶油并撒上可可粉。它是一款甜美的咖啡饮品，完美地平衡了咖啡的苦、牛奶的滑和巧克力的甜。</p>
+                    </div>
+                </article>
+                <article id="article-espresso">
+                    <img src="images/Espresso.jpg" alt="浓缩咖啡">
+                    <div class="text-content">
+                        <h4>浓缩咖啡Espresso</h4>
+                        <p>这是咖啡的精华所在，通过高压热水快速萃取咖啡粉制成。它口感强烈，香气浓郁，是所有意式咖啡（如拿铁、卡布奇诺）的基础。</p>
+                    </div>
+                </article>
+            </main>
+        </div> 
+        <footer>
+            <p>网站设计·前端开发实训 © 2015-2025</p>
+        </footer>
+    </div> 
+    
+    <div class="ad-banner">
+        <img src="images/banner.gif" alt="广告横幅">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

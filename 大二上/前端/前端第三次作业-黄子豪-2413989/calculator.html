@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器 Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+    <div class="app-wrapper">
+        
+        <div class="calculator" id="calculator">
+            <div class="display-container">
+                <div class="sub-display" id="sub-display"></div>
+                <div class="main-display" id="display">0</div>
+            </div>
+            
+            <div class="buttons" id="buttons-container">
+                
+                <div class="scientific-buttons" id="scientific-buttons">
+                    <button class="btn sci" data-value="sin">sin</button>
+                    <button class="btn sci" data-value="cos">cos</button>
+                    <button class="btn sci" data-value="tan">tan</button>
+                    <button class="btn sci" data-value="^">xʸ</button>
+
+                    <button class="btn sci" data-value="log">log</button>
+                    <button class="btn sci" data-value="ln">ln</button>
+                    <button class="btn sci" data-value="√">√</button>
+                    <button class="btn sci" data-value="π">π</button>
+                </div>
+
+                <button class="btn special" data-value="AC">AC</button>
+                <button class="btn special" data-value="(">(</button>
+                <button class="btn special" data-value=")">)</button>
+                <button class="btn special" data-value="DEL">DEL</button>
+
+                <button class="btn number" data-value="7">7</button>
+                <button class="btn number" data-value="8">8</button>
+                <button class="btn number" data-value="9">9</button>
+                <button class="btn operator" data-value="/">/</button>
+
+                <button class="btn number" data-value="4">4</button>
+                <button class="btn number" data-value="5">5</button>
+                <button class="btn number" data-value="6">6</button>
+                <button class="btn operator" data-value="x">x</button>
+
+                <button class="btn number" data-value="1">1</button>
+                <button class="btn number" data-value="2">2</button>
+                <button class="btn number" data-value="3">3</button>
+                <button class="btn operator" data-value="-">-</button>
+
+                <button class="btn decimal" data-value=".">.</button>
+                <button class="btn number" data-value="0">0</button>
+                <button class="btn special" data-value="%">%</button>
+                <button class="btn operator" data-value="+">+</button>
+
+                <button class="btn equals" data-value="=">=</button>
+            </div>
+        </div>
+
+        <div class="history-container">
+            <div class="history-header">
+                <h3>历史记录</h3>
+                <div class="toggles-container">
+                    <div class="mode-switcher">
+                        <input type="checkbox" id="mode-toggle">
+                        <label for="mode-toggle" class="toggle-label mode-label"></label>
+                    </div>
+                    <div class="theme-switcher">
+                        <input type="checkbox" id="theme-toggle">
+                        <label for="theme-toggle" class="toggle-label theme-label"></label>
+                    </div>
+                </div>
+            </div>
+            <ul id="history-list">
+            </ul>
+            <button id="clear-history">清除历史</button>
+        </div>
+
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
